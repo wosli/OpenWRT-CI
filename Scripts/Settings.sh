@@ -40,3 +40,7 @@ elif [[ $WRT_URL == *"immortalwrt"* ]]; then
 	echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 	#echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
 fi
+
+#OpenWrt golang latest version
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
