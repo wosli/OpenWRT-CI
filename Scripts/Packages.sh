@@ -20,18 +20,18 @@ UPDATE_PACKAGE() {
 	fi
 }
 
-UPDATE_PACKAGE "design" "gngpp/luci-theme-design" "$([[ $WRT_URL == *"lede"* ]] && echo "main" || echo "js")"
-UPDATE_PACKAGE "design-config" "gngpp/luci-app-design-config" "master"
-UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "$([[ $WRT_URL == *"lede"* ]] && echo "18.06" || echo "master")"
-UPDATE_PACKAGE "argon-config" "jerrykuku/luci-app-argon-config" "$([[ $WRT_URL == *"lede"* ]] && echo "18.06" || echo "master")"
+#UPDATE_PACKAGE "design" "gngpp/luci-theme-design" "$([[ $WRT_URL == *"lede"* ]] && echo "main" || echo "js")"
+#UPDATE_PACKAGE "design-config" "gngpp/luci-app-design-config" "master"
+#UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "$([[ $WRT_URL == *"lede"* ]] && echo "18.06" || echo "master")"
+#UPDATE_PACKAGE "argon-config" "jerrykuku/luci-app-argon-config" "$([[ $WRT_URL == *"lede"* ]] && echo "18.06" || echo "master")"
 
 UPDATE_PACKAGE "small" "kenzok8/small" "master"
 UPDATE_PACKAGE "openwrt-packages" "kenzok8/openwrt-packages" "master"
 
-if [[ $WRT_URL == *"immortalwrt"* ]]; then
+#if [[ $WRT_URL == *"immortalwrt"* ]]; then
 	#UPDATE_PACKAGE "homeproxy" "muink/homeproxy" "dev"
-	UPDATE_PACKAGE "homeproxy" "immortalwrt/homeproxy" "dev"
-fi
+	#UPDATE_PACKAGE "homeproxy" "immortalwrt/homeproxy" "dev"
+#fi
 
 #更新软件包版本
 UPDATE_VERSION() {
@@ -54,4 +54,4 @@ UPDATE_VERSION() {
 	fi
 }
 
-UPDATE_VERSION "sing-box" "1.8.5" "0d5e6a7198c3a18491ac35807170715118df2c7b77fd02d16d7cfb5791e368ce"
+#UPDATE_VERSION "sing-box" "1.8.5" "0d5e6a7198c3a18491ac35807170715118df2c7b77fd02d16d7cfb5791e368ce"
