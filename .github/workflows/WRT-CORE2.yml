@@ -200,7 +200,7 @@ jobs:
         run: |
           cd ./wrt/ && mkdir ./upload/
 
-          cp -rf ./.config ./upload/Config_"$WRT_TARGET"_"$WRT_SOURCE"_"$WRT_DATE".txt
+          cp -rf ./.config ./upload/Config_"$WRT_TARGET"_"$WRT_SOURCE"_"$WRT_BRANCH"_"$WRT_DATE".txt
 
           if [[ $WRT_CFG == 'false' ]]; then
             rm -rf $(find ./bin/targets/ -iregex ".*\(buildinfo\|json\|manifest\|sha256sums\|packages\)$")
@@ -218,7 +218,7 @@ jobs:
       - name: Release Firmware
         uses: softprops/action-gh-release@master
         with:
-          tag_name: ${{env.WRT_TARGET}}_${{env.WRT_SOURCE}}_${{env.WRT_DATE}}
+          tag_name: ${{env.WRT_TARGET}}_${{env.WRT_SOURCE}}_${{env.WRT_BRANCH}}_${{env.WRT_DATE}}
           files: ./wrt/upload/*.*
           body: |
             这是个平台固件包，内含多个设备！
@@ -226,6 +226,7 @@ jobs:
             不要问，更就完事了！
 
             源码：${{env.WRT_SOURCE}}
+            分支：${{env.WRT_BRANCH}}
             平台：${{env.WRT_TARGET}}
             设备：${{env.WRT_TYPE}}
             密码：${{env.WRT_PW}}
